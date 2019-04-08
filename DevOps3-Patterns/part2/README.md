@@ -21,6 +21,7 @@ chmod +x build-and-execute.sh
 * Created config.ini and filled it with data.
 * Modified vmime CMakeLIsts.txt in way that it wouldn't throw error if there's no VMIME_SENDMAIL_PATH by adding FORCE in set (of that) variable.
 * Had to install VPN on my machine in order to get ./Decorator work properly.
+* Had to modify EmailNotifier.cpp replacing "smtp://" to "smtps://".
 
 ## GMail: prog.techn2@gmail.com
 ## Tg bot name: Noskimelian
