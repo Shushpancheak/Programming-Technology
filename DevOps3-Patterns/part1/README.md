@@ -8,5 +8,5 @@
 * To run binaries after compile, run `./execute.sh` on rpi.
 
 ## Steps to accomplish the task:
-I needed to change some files in repository, such as CMakeLists.txt and RoomSerializer.cpp. CMakeLists now has SYSROOT variable set and RoomSerializer.cpp now has only pre-C++17 standart features (otherwise it wouldn't compile with g++ 4.8 which is provided by toolchain).
+The only issue was with finding gcc and g++ compilers by cmake. I needed to change CMakeLists.txt so that it could find the right cross-compilers for rpi.
 
