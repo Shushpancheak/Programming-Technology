@@ -9,17 +9,12 @@ cd PatternsCollection
 echo "...Modifying existing CMakeLists..."
 rm CMakeLists.txt
 cp ../CMakeLists.txt CMakeLists.txt
-echo "...Modfying some files to match 14 C++ standart..."
-rm AbstractFactory/cpp-source/factories/RoomFactory.cpp
-cp ../RoomFactory.cpp AbstractFactory/cpp-source/factories/RoomFactory.cpp
-rm AbstractFactory/cpp-source/serializers/RoomSerializer.cpp
-cp ../RoomSerializer.cpp AbstractFactory/cpp-source/serializers/RoomSerializer.cpp
 
 mkdir build
 cd build
 
 echo "...Building project on pi..."
-cmake .. -DON_PI=ON
+cmake .. -DON_PI=ON -DSYSROOT=$(pwd)/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/arm-linux-gnueabihf/sysroot/
 
 echo "...Compiling project..."
 make
