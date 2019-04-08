@@ -1,7 +1,12 @@
 # Part 2: Notifier.
 
 ## Steps to compile:
-Make sure you have installed necessary packages and their dependencies: `curl, OpenSSL, vmime, sendmail*, mailutils, Boost, GnuTLS`
+Make sure you have installed necessary packages and their dependencies: 
+* CURL (`libcurl4-openssl-dev`)
+* OpenSSL (`sudo apt-get install libssl-dev`)
+* sendmail (`sudo apt-get install sendmail*`)
+* Boost (`sudo apt-get install libboost-system-dev`)
+* GnuTLS (`sudo apt-get install gnutls*`)
 
 Maybe you'll need others, then just download them when an error occurs.
 

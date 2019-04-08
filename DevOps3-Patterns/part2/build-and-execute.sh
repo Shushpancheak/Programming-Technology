@@ -23,8 +23,8 @@ cmake ..
 
 echo "...Changing SendMail library because of bug..."
 
-rm build/Decorator/cpp-source/vmime_project-prefix/src/vmime_project/CMakeLists.txt
-cp ../VMIME_CMakeLists.txt build/Decorator/cpp-source/vmime_project-prefix/src/vmime_project/CMakeLists.txt
+rm Decorator/cpp-source/vmime_project-prefix/src/vmime_project/CMakeLists.txt
+cp ../../VMIME_CMakeLists.txt Decorator/cpp-source/vmime_project-prefix/src/vmime_project/CMakeLists.txt
 
 echo "...Compiling..."
 
