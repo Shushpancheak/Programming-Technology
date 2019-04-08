@@ -2,7 +2,8 @@
 
 ## Steps to compile:
 Make sure you have installed necessary packages and their dependencies: `curl, OpenSSL, vmime, sendmail*, mailutils, Boost, GnuTLS`
-Maybe you'll need others, then just download them when an error occur.
+
+Maybe you'll need others, then just download them when an error occurs.
 
 ```bash
 chmod +x build-and-execute.sh
