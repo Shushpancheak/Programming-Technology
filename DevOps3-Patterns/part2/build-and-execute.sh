@@ -8,9 +8,9 @@ echo "...Adding config.ini..."
 rm Decorator/cpp-source/configs/config.ini
 cp ../config.ini Decorator/cpp-source/configs/config.ini
 
-echo "...Modifying EmailNotifiers.cpp..."
-rm Decorator/cpp-source/notifier/EmailNotifiers.cpp
-cp ../EmailNotifiers.cpp Decorator/cpp-source/notifiers/EmailNotifiers.cpp
+echo "...Modifying EmailNotifier.cpp..."
+rm Decorator/cpp-source/notifiers/EmailNotifier.cpp
+cp ../EmailNotifier.cpp Decorator/cpp-source/notifiers/EmailNotifier.cpp
 
 echo "...Modifying CMakeLists to have only Decorator project..."
 rm CMakeLists.txt
