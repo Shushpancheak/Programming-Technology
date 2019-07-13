@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  volumes:
+    mailconfig:
+      driver: local
+    webmaildata:
+      driver: local
+    maildata:
+      driver: local
+    mailstate:
+      driver: local
+
+  mail:
+    image: tvial/docker-mailserver:latest
+    hostname: mail
+    domainname: shushpancheak.space
+    container_name: mail
+    ports:
+    - "25:25"
+    - "143:143"
+    - "587:587"
+    - "993:993"
+    volumes:
+    - maildata:/var/mail
+    - mailstate:/var/mail-state
+    - mailconfig:/tmp/docker-mailserver/
+    - /home/ubuntu/docker/letsencrypt/etc/:/etc/letsencrypt/
+    - /etc/localtime:/etc/localtime:ro
+
+  webmail:
+    image: krishath/rainloop-ssl
+    container_name: webmail
+    volumes:
+    - /home/ubuntu/docker/letsencrypt/etc/live/mail.shushpancheak.space/fullchain.pem:/etc/ssl/cert.pem
+    - /home/ubuntu/docker/letsencrypt/etc/live/mail.shushpancheak.space/privkey.pem:/etc/ssl/cert.key
+    - /home/ubuntu/docker/letsencrypt/dhparam.pem:/etc/ssl/certs/dhparam.pem
+    - webmaildata:/webapps/rainloop/data
+    - /etc/localtime:/etc/localtime:ro
+    ports:
+    - "443:443"
